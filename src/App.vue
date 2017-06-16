@@ -26,7 +26,7 @@
       </table>
 </div>
 
-  <carousel v-if="showCarousel" :navigationEnabled="false" :pagination="true" :perPage="1" >
+  <carousel v-if="showCarousel" :navigationEnabled="false" pagination="true" perPage="1" paginationColor="#D4D3D3" >
 
 
   <slide>
@@ -64,7 +64,7 @@
 
   <slide>
   <div id="promo">
-    <h4>One week free, when you add Ken Mills to your team</h4>
+    <h4><span style="text-decoration: underline">One week free</span>, when you add Ken Mills to your team</h4>
     <h4>Available for remote projects or onsite projects near Philly</h4>
   </div>
   </slide>
@@ -173,4 +173,7 @@ export default {
   font-size: 120%;
 }
 
+a:hover {
+ cursor:pointer;
+}
 </style>
