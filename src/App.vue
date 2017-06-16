@@ -52,9 +52,10 @@
       $new_team_member = new User();
       $new_team_member->name = $request->input('name');
       $new_team_member->save();
+      $project->add_member($new_team_member);
       return response()->json([
         'status' => 'ok',
-      'newTeamMember' => $new_team_member;
+        'newTeamMember' => $new_team_member;
       ]);
     }
   }
