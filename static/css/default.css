@@ -1,0 +1,311 @@
+/*
+Built on Bootstrap 3 by Ken Mills
+index.html is divided into sections with Menu in right corner.
+Home, About, Projects, Learning, Contact, Footer
+*/
+html,body{height:100%;}
+body p{
+	font-size: larger;
+}
+
+.fill {
+	height: 100%;
+	min-height: 900px;
+	overflow-y: hidden;
+}
+
+.text-vertical-center {
+	display: table-cell;
+	text-align: left;
+	vertical-align: middle ;
+	padding: 3% 15%;
+}
+
+.text-vertical-center p {
+	margin-top: 5px;
+}
+.header {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+
+/* Custom Button Styles */
+
+.btn-dark {
+	border-radius: 0;
+	color: #fff;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.btn-dark:hover,
+.btn-dark:focus,
+.btn-dark:active {
+	color: #fff;
+	background-color: rgba(0,0,0,0.7);
+}
+
+.btn-light {
+	border-radius: 0;
+	color: #333;
+	background-color: rgb(255,255,255);
+}
+
+.btn-light:hover,
+.btn-light:focus,
+.btn-light:active {
+	color: #333;
+	background-color: rgba(255,255,255,0.8);
+}
+
+
+/* Side Menu */
+
+#sidebar-wrapper {
+	z-index: 1000;
+	position: fixed;
+	right: 0;
+	width: 250px;
+	height: 100%;
+	margin-right: -250px;
+	overflow-y: auto;
+	background: #6691b7;
+	-webkit-transition: all 0.4s ease 0s;
+	-moz-transition: all 0.4s ease 0s;
+	-o-transition: all 0.4s ease 0s;
+	transition: all 0.4s ease 0s;
+}
+
+.sidebar-nav {
+	position: absolute;
+	top: 0;
+	width: 250px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.sidebar-nav li {
+	text-indent: 20px;
+	line-height: 40px;
+}
+
+.sidebar-nav li a {
+	display: block;
+	text-decoration: none;
+	color: #262626;
+}
+
+.sidebar-nav li a:hover {
+	text-decoration: none;
+	color: #fff;
+	background: rgba(255,255,255,0.2);
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+	text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand {
+	height: 55px;
+	font-size: 18px;
+	line-height: 55px;
+}
+
+.sidebar-nav > .sidebar-brand a {
+	color: #262626;
+}
+
+.sidebar-nav > .sidebar-brand a:hover {
+	color: #fff;
+	background: none;
+}
+
+#menu-toggle {
+	z-index: 1;
+	position: fixed;
+	top: 0;
+	right: 0;
+}
+
+#sidebar-wrapper.active {
+	right: 250px;
+	width: 250px;
+	-webkit-transition: all 0.4s ease 0s;
+	-moz-transition: all 0.4s ease 0s;
+	-o-transition: all 0.4s ease 0s;
+	transition: all 0.4s ease 0s;
+}
+
+.toggle {
+	margin: 5px 5px 0 0;
+}
+
+/* Home */
+.home {
+	background-color: #FFFFFF;
+	height: 100%;
+	text-align: left;
+	width: 60%;
+	margin-top: 10%;
+	margin-left: 20%;
+	margin-right: 20%;
+}
+
+.banner{
+	background-color: white;
+	color: black;
+	padding: 30px;
+	font-size: larger;
+}
+
+.banner a{
+	color:#ffffff;
+	padding-right: 10px;
+}
+
+.banner i{
+	font-size: larger;
+}
+.banner img{
+	width: 80%;
+	max-width: 200px;
+}
+
+.empty-band{
+	background-color: rgba(102,145,183,1.0);
+	min-height: 50px;
+	height: 50px;
+	width:100%;
+}
+
+
+
+/* About */
+.about {
+	padding:50px;
+}
+.about li{
+	list-style-type: square;
+	text-align: left;
+	font-size: larger;
+}
+
+.about img{
+	width: 60%;
+	align-self: center;
+	margin-top: 25px;
+	max-height: 50%;
+	max-width: 50%;
+}
+
+/* Bio */
+#bio p {
+	padding-top: 30px;
+}
+
+#bio img{
+	margin-top: 15px;
+	max-height: 50px;
+	max-width: 60px;
+}
+
+.job-title {
+	font-size: 150%;
+	font-weight: 500;
+}
+
+.special {
+	font-size: 85%;
+	font-style: italic;
+}
+
+
+
+/* History */
+.history {
+	background-image: url("../images/tree-blue2.png");
+	background-repeat:no-repeat;
+	background-position:center;
+	text-align:left;
+	color : #000000;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	-o-background-size: cover;
+
+	padding-top: 25%;
+}
+/* fill is used to make home and about pages full screen however if display drops below the max-width parameter
+   set heights to default values so the home page text does not run into the next section */
+@media (max-width:750px) {
+	.history {
+		background-image: none;
+	}
+	.fill{
+		width:100%;
+		height:initial;
+		min-height:initial;
+	}
+
+}
+
+.history .lineage{
+	margin-top: 25px;
+	margin-bottom: 30px;
+}
+
+.history li{
+	list-style-type: none;
+	font-weight: bold;
+	font-size: large;
+}
+.history p{
+	width: 80%;
+}
+
+.history .p-bold{
+	font-size: large;
+	font-weight: bold;
+}
+
+.genealogy {
+	padding-top: 15%;
+	display: block;
+	vertical-align: bottom;
+}
+
+.contact-page {
+	background-color: rgba(102, 145, 183, 1.0);
+	color: #ffffff;
+	text-align: center;
+}
+
+.pk-icons {
+
+	font-size: 85%;
+
+}
+
+.top-margin{
+	margin-top: 200px;
+}
+
+i{
+	letter-spacing: 10px;
+}
+
+.fa-icon{
+	font-size: x-large;
+	color: white;
+}
+
+
+.footer{
+	text-align: center;
+	color: #ffffff;
+	background-color: rgba(102,145,183,1.0);
+	margin-top: 300px;
+}
