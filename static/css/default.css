@@ -4,7 +4,7 @@ index.html is divided into sections with Menu in right corner.
 Home, About, Projects, Learning, Contact, Footer
 */
 html,body{height:100%;}
-body p{
+body i,p{
 	font-size: larger;
 	color:#2c3e50;
 }
@@ -195,12 +195,12 @@ Testing use of HR
 .bio {
 	padding-top: 10px;
 	padding-bottom: 15px;
-	text-align: center;
 }
 
 .job-title {
 	font-size: 150%;
 	font-weight: 500;
+	padding-left: 35px;
 }
 
 .special {
@@ -208,11 +208,24 @@ Testing use of HR
 	font-style: italic;
 }
 
+/* vue-app */
+#vue-app {
+
+	max-width: 800px;
+
+}
+
 
 /* About */
 .about {
 	padding:50px;
 }
+
+.about h2{
+	color:#2c3e50;
+	text-align: left;
+}
+
 .about li{
 	list-style-type: square;
 	text-align: left;
@@ -234,6 +247,10 @@ Testing use of HR
 		min-height:initial;
 	}
 
+}
+
+@media screen and (min-width: 0px) and (max-width: 400px) {
+  #vue-app { display: none; }   /* hide it elsewhere */
 }
 
 
