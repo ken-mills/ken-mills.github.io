@@ -43,24 +43,18 @@
 
 </div>
 
-<carousel v-if="showCarousel" :navigationEnabled="false" pagination="true" perPage="1" paginationColor="#D4D3D3" >
-
+<carousel v-if="showCarousel" :navigationEnabled="true" pagination="true" perPage="1" paginationColor="#D4D3D3" >
 
 <slide>
-<h4>You get a Vue.js developer</h4>
-<pre class="vue-pre"><code class="vue-code">
-&lt;div v-if="showProjects"&gt;
-  &lt;ul&gt;
-    &lt;li v-for = "project in projects"&gt;
-      &lt;strong
-        class="fa fa-plus" aria-hidden="true"
-        @click = "addTeamMember( project.id, 'Ken Mills' )"
-      &gt;
-      &lt;/strong&gt;
-    &lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/div&gt;
-</code></pre>
+<div id="promo">
+ <ul style="list-style:none">
+  <li>You get a team player</li>
+  <li>You get an experienced IS professional</li>
+  <li>You get a remote developer or</li>
+  <li>You get an onsite developer near Philly</li>
+  <li>You get <span style="text-decoration: underline">two days free</span>, when you add Ken Mills to your team</li>
+  </ul>
+</div>
 </slide>
 
 <slide>
@@ -82,15 +76,22 @@ class ProjectController extends Controller {
 </slide>
 
 <slide>
-<div id="promo">
- <ul>
-  <li>You get a team player</li>
-  <li>You get an experienced IS professional</li>
-  <li>You get <span style="text-decoration: underline">one week free</span>, when you add Ken Mills to your team</li>
-  <li>You get a remote developer or an onsite dev near Philly</li>
-  </ul>
-</div>
+<h4>You get a Vue.js developer</h4>
+<pre class="vue-pre"><code class="vue-code">
+&lt;div v-if="showProjects"&gt;
+  &lt;ul&gt;
+    &lt;li v-for = "project in projects"&gt;
+      &lt;strong
+        class="fa fa-plus" aria-hidden="true"
+        @click = "addTeamMember( project.id, 'Ken Mills' )"
+      &gt;
+      &lt;/strong&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre>
 </slide>
+
 
 </carousel>
 
@@ -192,6 +193,10 @@ export default {
   color: #f35045;
   font-size: 110%;
   font-weight: 600;
+}
+
+#promo {
+    padding-top: 80px
 }
 
 #promo li{
