@@ -8,7 +8,6 @@
       <tr v-for="project in projects">
           <td>
               <div class="truncate">
-                <span>Add a Ken Mills to your </span>
                 <span :class="project.class">
                   {{project.name}}
                 </span>
@@ -16,10 +15,9 @@
               </div>
           </td>
           <td>
-            <a>
-               <i class="fa fa-plus fa-lg" aria-hidden="true" v-on:click="addTeamMember(project.id)"
-                   rel="tooltip" title="Add Ken MIlls"></i>
-            </a>
+            <a class="btn btn-primary btn-colors" style="margin-left:2px" href="#" v-on:click="addTeamMember(project.id)">
+                <i class="fa fa-plus icon-color"
+                   rel="tooltip" title="Add Ken MIlls"></i>Ken Mills</a>
           </td>
 
       </tr>
@@ -43,7 +41,7 @@
 
 </div>
 
-<carousel v-if="showCarousel" :navigationEnabled="true" pagination="true" perPage="1" paginationColor="#D4D3D3" >
+<carousel v-if="showCarousel" :navigationEnabled="true" :paginationEnabled="true" :perPage="1" paginationColor="#D4D3D3" >
 
 <slide>
 <div id="promo">
@@ -196,7 +194,7 @@ export default {
 }
 
 #promo {
-    padding-top: 80px
+    padding-top: 60px
 }
 
 #promo li{
@@ -218,5 +216,13 @@ a:hover {
   padding-left: 15px;
 }
 
+.btn-colors {
+  color:white;
+  background-color:#2c3e50;
+}
+
+.icon-color {
+    color: white;
+}
 
 </style>
