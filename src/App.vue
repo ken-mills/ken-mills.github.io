@@ -5,9 +5,10 @@
 <div id="projects" v-if="showForm1">
 
       <table>
-      <tr v-for="project in projects">
+      <tr v-for="project in sortedProjects">
           <td>
               <div class="truncate">
+                Your
                 <span :class="project.class">
                   {{project.name}}
                 </span>
@@ -90,6 +91,19 @@ class ProjectController extends Controller {
 </code></pre>
 </slide>
 
+<slide>
+<h4>You get an experienced database developer</h4>
+<pre class="laravel-pre"><code class="laravel-code">
+$category_average = Score::where([
+    ['scores.survey_id','=', $row->survey_id],
+    ['score_items.category_id', '=', $row->id] //category_id ])
+  ->leftJoin('score_items', 'score_items.score_id', 'scores.id')
+  ->groupBy('scores.survey_id','score_items.category_id')
+  ->select(DB::raw('round(avg(score_items.score),0) as avg_score'))
+  ->first()->avg_score;</code></pre>
+</slide>
+
+
 
 </carousel>
 
@@ -114,6 +128,7 @@ export default {
 
         {"id":0, "name" : "Laravel" , "class" : "laravel-code" },
         {"id":1, "name" : "Vue.js", "class" : "vue-code" },
+        {"id":2, "name" : "Backoffice", "class": "" },
 
       ]
     }
@@ -121,6 +136,18 @@ export default {
 
   mounted: function () {
     this.showForm1 = true;
+  },
+
+  computed: {
+
+    sortedProjects: function(){
+
+        return this.projects.sort(function(a, b){
+           return a.id - b.id;
+        });
+
+    }
+
   },
 
   methods: {
