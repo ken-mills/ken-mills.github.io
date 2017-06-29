@@ -8,7 +8,7 @@
       <tr v-for="project in sortedProjects">
           <td>
               <div class="truncate">
-                Your
+                Add Ken to your
                 <span :class="project.class">
                   {{project.name}}
                 </span>
@@ -18,7 +18,7 @@
           <td>
             <a class="btn btn-primary btn-colors" style="margin-left:2px" href="#" v-on:click="addTeamMember(project.id)">
                 <i class="fa fa-plus icon-color"
-                   rel="tooltip" title="Add Ken MIlls"></i>Ken Mills</a>
+                   rel="tooltip" title="Add Ken Mills"></i>Ken Mills</a>
           </td>
 
       </tr>
@@ -48,10 +48,11 @@
 <div id="promo">
  <ul style="list-style:none">
   <li>You get a team player</li>
-  <li>You get an experienced IS professional</li>
+  <li>You get an experienced professional</li>
   <li>You get a remote developer or</li>
   <li>You get an onsite developer near Philly</li>
   <li>You get <span style="text-decoration: underline">two days free</span>, when you add Ken Mills to your team</li>
+
   </ul>
 </div>
 </slide>
@@ -104,7 +105,6 @@ $category_average = Score::where([
 </slide>
 
 
-
 </carousel>
 
 </div>
@@ -128,7 +128,7 @@ export default {
 
         {"id":0, "name" : "Laravel" , "class" : "laravel-code" },
         {"id":1, "name" : "Vue.js", "class" : "vue-code" },
-        {"id":2, "name" : "Backoffice", "class": "" },
+        {"id":2, "name" : "backoffice", "class": "" },
 
       ]
     }
