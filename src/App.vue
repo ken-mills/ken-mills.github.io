@@ -47,12 +47,12 @@
 <slide>
 <div id="promo">
  <ul style="list-style:none">
-  <li>You get a team player</li>
-  <li>You get an experienced professional</li>
-  <li>You get a remote developer or</li>
-  <li>You get an onsite developer near Philly</li>
-  <li>You get <span style="text-decoration: underline">two days free</span>, when you add Ken Mills to your team</li>
-
+  <li>You get an experienced IT professional</li>
+  <li>You get a proven leader</li>
+  <li>You get a knowledgeable consultant</li>
+  <li>You get a project manager</li>
+  <li>You get a developer near Philly</li>
+  <li>You get <span style="text-decoration: underline">two days free</span>, when you add Ken Mills to your project</li>
   </ul>
 </div>
 </slide>
@@ -61,14 +61,17 @@
 <h4>You get a Laravel developer</h4>
 <pre class="laravel-pre"><code class="laravel-code">
 class ProjectController extends Controller {
-  public function AddTeamMember(Request $request, Project $project){
-    $new_team_member = new User();
-    $new_team_member->name = $request->input('name');
-    $new_team_member->save();
-    $project->add_member($new_team_member);
+  public function insert(Request $request, Project $project){
+    $developer = new User();
+    $developer->name = $request->input('name');
+    $developer->experience = '10';
+    $developer->communication = '10';
+    $developer->leadership = '10';
+    $developer->save();
+    $project->add($developer);
     return response()->json([
-      'status' => 'ok',
-      'newTeamMember' => $new_team_member;
+      'status' => 'great',
+      'getProjectDone' => $developer;
     ]);
   }
 }
@@ -83,7 +86,7 @@ class ProjectController extends Controller {
     &lt;li v-for = "project in projects"&gt;
       &lt;strong
         class="fa fa-plus" aria-hidden="true"
-        @click = "addTeamMember( project.id, 'Ken Mills' )"
+        @click = "add( project.id, 'Ken Mills' )"
       &gt;
       &lt;/strong&gt;
     &lt;/li&gt;
@@ -93,7 +96,7 @@ class ProjectController extends Controller {
 </slide>
 
 <slide>
-<h4>You get an experienced database developer</h4>
+<h4>You get an experienced Back-Office developer</h4>
 <pre class="laravel-pre"><code class="laravel-code">
 $category_average = Score::where([
     ['scores.survey_id','=', $row->survey_id],
@@ -128,7 +131,7 @@ export default {
 
         {"id":0, "name" : "Laravel" , "class" : "laravel-code" },
         {"id":1, "name" : "Vue.js", "class" : "vue-code" },
-        {"id":2, "name" : "backoffice", "class": "" },
+        {"id":2, "name" : "Back-Office", "class": "" },
 
       ]
     }
