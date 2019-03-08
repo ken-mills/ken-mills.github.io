@@ -2,50 +2,15 @@
 
 <div>
 
-<div id="projects" v-if="showForm1">
-
-      <table>
-      <tr v-for="project in sortedProjects">
-          <td>
-              <div class="truncate">
-                Add Ken to your
-                <span :class="project.class">
-                  {{project.name}}
-                </span>
-                <span class="truncated"> project </span>
-              </div>
-          </td>
-          <td>
-            <a class="btn btn-primary btn-colors" style="margin-left:2px" href="#" v-on:click="addTeamMember(project.id)">
-                <i class="fa fa-plus icon-color"
-                   rel="tooltip" title="Add Ken Mills"></i>Ken Mills</a>
-          </td>
-
-      </tr>
-      </table>
-</div>
-
-<div id="ken-mills" v-if="showForm2">
-
-  <form method="POST" v-on:submit.prevent="saveTeamMember" class="form-inline" >
-
-  <div class="form-group form-spacing">
-    <label for="member">Team Member</label>
-    <input type="text" class="form-control" value="Ken Mills" id="member" disabled>
-  </div>
-
-  <div class="form-group">
-    <input type="submit" value="Add" class="btn btn-primary" />
-  </div>
-
-  </form>
-
-</div>
-
-<carousel v-if="showCarousel" :navigationEnabled="true" :paginationEnabled="true" :perPage="1" paginationColor="#D4D3D3" >
+<carousel v-if="showCarousel"
+   :navigationEnabled="true"
+   :paginationEnabled="true"
+   :perPage="1"
+   paginationColor="#D4D3D3"
+   >
 
 <slide>
-<div id="promo">
+<div id="promo" class="text-vertical-center">
  <ul style="list-style:none">
   <li>You get an experienced IT professional</li>
   <li>You get a proven leader</li>
@@ -124,80 +89,14 @@ export default {
   },
   data: function () {
     return {
-      showForm1: true,
-      showForm2: false,
-      showCarousel:false,
-      projects: [
-
-        {"id":0, "name" : "Laravel" , "class" : "laravel-code" },
-        {"id":1, "name" : "Vue.js", "class" : "vue-code" },
-        {"id":2, "name" : "Back-Office", "class": "" },
-
-      ]
+      showCarousel:true,
     }
   },
 
-  mounted: function () {
-    this.showForm1 = true;
-  },
-
-  computed: {
-
-    sortedProjects: function(){
-
-        return this.projects.sort(function(a, b){
-           return a.id - b.id;
-        });
-
-    }
-
-  },
-
-  methods: {
-
-    addTeamMember: function(id){
-
-      console.log('Button clicked = ' + id);
-      this.showForm1 = false;
-      this.showCarousel = true;
-    },
-
-    saveTeamMember: function(id){
-
-      console.log('Button clicked = ' + id);
-      this.showForm2 = false;
-      this.showCarousel = false;
-    }
-
-  }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-  margin-top: 30px;
-  text-align: left;
-}
-
-.truncate {
-    display: table;
-    table-layout: fixed;
-    width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    font-weight: bold;
-    margin-top: 15px;
-
-}
-
-.truncated:after {
-    content:'................................................................................................................................';
-}
 
 .vue-pre{
   background-color: white;
@@ -240,19 +139,6 @@ export default {
 
 a:hover {
  cursor:pointer;
-}
-
-.form-spacing{
-  padding-left: 15px;
-}
-
-.btn-colors {
-  color:white;
-  background-color:#2c3e50;
-}
-
-.icon-color {
-    color: white;
 }
 
 </style>

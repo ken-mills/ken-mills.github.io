@@ -1,270 +1,133 @@
-/*
-Built on Bootstrap 3 by Ken Mills
-index.html is divided into sections with Menu in right corner.
-Home, About, Projects, Learning, Contact, Footer
-*/
-html,body{height:100%;}
-body i,p{
-	font-size: larger;
-	color:#2c3e50;
+html, body {
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+body i, p {
+    font-size: larger;
+    color: #2c3e50;
+
 }
 
 @media screen and (min-width: 0px) and (max-width: 412px) {
-  #vue-app { display: none; }   /* hide it elsewhere */
+    #vue-app {
+        display: none;
+    }
+
+    /* hide it elsewhere */
+}
+
+.hero-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/static/images/top.png");
+    height: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+
+.my-pic img{
+	width: 80%;
+	max-width: 200px;
+	margin-top: 15px;
 }
 
 .fill {
-	height: 100%;
-	min-height: 900px;
-	overflow-y: hidden;
-}
-
-.text-vertical-center {
-	display: table-cell;
-	text-align: left;
-	vertical-align: middle ;
-	padding: 3% 15%;
-}
-
-.text-vertical-center p {
-	margin-top: 5px;
-}
-.header {
-	position: relative;
-	width: 100%;
-	height: 100%;
-}
-
-
-/* Custom Button Styles */
-
-.btn-dark {
-	border-radius: 0;
-	color: #fff;
-	background-color: rgba(0,0,0,0.4);
-}
-
-.btn-dark:hover,
-.btn-dark:focus,
-.btn-dark:active {
-	color: #fff;
-	background-color: rgba(0,0,0,0.7);
-}
-
-.btn-light {
-	border-radius: 0;
-	color: #333;
-	background-color: rgb(255,255,255);
-}
-
-.btn-light:hover,
-.btn-light:focus,
-.btn-light:active {
-	color: #333;
-	background-color: rgba(255,255,255,0.8);
-}
-
-
-/* Side Menu */
-
-#sidebar-wrapper {
-	z-index: 1000;
-	position: fixed;
-	right: 0;
-	width: 250px;
-	height: 100%;
-	margin-right: -250px;
-	overflow-y: auto;
-	background: #2c3e50;
-	-webkit-transition: all 0.4s ease 0s;
-	-moz-transition: all 0.4s ease 0s;
-	-o-transition: all 0.4s ease 0s;
-	transition: all 0.4s ease 0s;
-}
-
-.sidebar-nav {
-	position: absolute;
-	top: 0;
-	width: 250px;
-	margin: 0;
-	padding: 0;
-	list-style: none;
-}
-
-.sidebar-nav li {
-	text-indent: 20px;
-	line-height: 40px;
-}
-
-.sidebar-nav li a {
-	display: block;
-	text-decoration: none;
-	color: grey;
-}
-
-.sidebar-nav li a:hover {
-	text-decoration: none;
-	color: #fff;
-	background: rgba(255,255,255,0.2);
-}
-
-.sidebar-nav li a:active,
-.sidebar-nav li a:focus {
-	text-decoration: none;
-}
-
-.sidebar-nav > .sidebar-brand {
-	height: 55px;
-	font-size: 18px;
-	line-height: 55px;
-}
-
-.sidebar-nav > .sidebar-brand a {
-	color: gray;
-}
-
-.sidebar-nav > .sidebar-brand a:hover {
-	color: #fff;
-	background: none;
-}
-
-#menu-toggle {
-	z-index: 1;
-	position: fixed;
-	top: 0;
-	right: 0;
-}
-
-#sidebar-wrapper.active {
-	right: 250px;
-	width: 250px;
-	-webkit-transition: all 0.4s ease 0s;
-	-moz-transition: all 0.4s ease 0s;
-	-o-transition: all 0.4s ease 0s;
-	transition: all 0.4s ease 0s;
-}
-
-.toggle {
-	margin: 5px 5px 0 0;
-}
-
-/* Home */
-.home {
-	background-color: #FFFFFF;
-	height: 100%;
-	text-align: left;
-	width: 60%;
-	margin-top: 10%;
-	margin-left: 20%;
-	margin-right: 20%;
-}
-
-.banner{
-	background-color: white;
-	color: black;
-	padding: 30px;
-	font-size: larger;
-}
-
-.banner a{
-	font-size:85%;
-	color: #2c3e50;
-	padding-right: 10px;
-}
-
-.banner i{
-	font-size: larger;
-}
-.banner img{
-	width: 80%;
-	max-width: 200px;
-}
-.top-line {
-    border: none;
-    height: 4px;
-    /* Set the hr color */
-    background-color: #2c3e50; /* Modern Browsers */
+    height: 100%;
+    min-height: 900px;
+    overflow-y: hidden;
 }
 
 /* Bio */
 .bio {
-	padding-top: 10px;
-	padding-bottom: 15px;
-	padding-left: 35px;
-	overflow-wrap: break-word;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    padding-left: 35px;
+    overflow-wrap: break-word;
+}
+
+.my-name {
+    font-size: 150%;
+    font-weight: 500;
 }
 
 .job-title {
-	font-size: 150%;
-	font-weight: 500;
+    font-size: 125%;
+    font-weight: 500;
 }
 
 .special {
-	font-size: 85%;
-	font-style: italic;
+    font-style: italic;
 }
 
 /* vue-app */
 #vue-app {
-
-	max-width: 800px;
-
+    max-width: 800px;
 }
 
+#app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #2c3e50;
+    margin-top: 30px;
+    text-align: left;
+}
 
 /* About */
 .about-container {
-	padding:50px;
+    padding: 50px;
 }
 
-.about-headers{
-	color:#2c3e50;
-	text-align: left;
-	margin-left: 15px;
+.about-headers {
+    color: #2c3e50;
+    text-align: left;
+    margin-left: 15px;
 }
 
-.about-list-item{
-	list-style-type: square;
-	text-align: left;
-	font-size: larger;
-	margin-right: 5px;
+.about-list-item {
+    list-style-type: square;
+    text-align: left;
+    font-size: larger;
+    margin-right: 5px;
 }
 
-.about-img{
-	width: 60%;
-	align-self: center;
-	margin-top: 25px;
-	max-height: 50%;
-	max-width: 50%;
+.about-img {
+    width: 60%;
+    align-self: center;
+    margin-top: 25px;
+    max-height: 50%;
+    max-width: 50%;
 }
 
-@media (max-width:750px) {
-	.fill{
-		width:100%;
-		height:initial;
-		min-height:initial;
-	}
+@media (max-width: 750px) {
+    .fill {
+        width: 100%;
+        height: initial;
+        min-height: initial;
+    }
 
 }
-
-
 
 #contact {
-	background-color: #2c3e50;
+    background-color: #2c3e50;
 }
 
-.contact-color{
-	color: #ffffff;
-	text-align: center;
-}
-.top-margin{
-	margin-top: 200px;
+.contact-color {
+    color: #ffffff;
+    text-align: center;
 }
 
-i{
-	letter-spacing: 10px;
+.top-margin {
+    margin-top: 200px;
 }
-.footer{
-	text-align: center;
-	margin-top: 300px;
+
+i {
+    letter-spacing: 10px;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 300px;
 }
