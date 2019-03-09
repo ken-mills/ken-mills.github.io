@@ -15,7 +15,7 @@ i {
 .fill {
     height: 100%;
     min-height: 900px;
-    overflow-y: hidden;
+    overflow-x: hidden;
 }
 
 .hero-image {
