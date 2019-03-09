@@ -1,5 +1,7 @@
 # pkmills.com
 
-> Personal page for ken-mills on github pages
+* Redesigned March 2019
+* Personal page moved to Forge server
+* Removed all vue dependencies
 
-* Integrated slider using vue-carousel in June 2017
+
